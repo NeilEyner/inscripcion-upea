@@ -143,13 +143,11 @@ export default function TablaParticipantes({
                     <th key={req.id} className="px-1.5 py-2.5 text-center">
                       <Tooltip>
                         <TooltipTrigger>
-                          <span className="block max-w-8 cursor-help overflow-hidden text-ellipsis whitespace-nowrap text-[10px] font-semibold text-slate-500">
+                          <span className="block w-full cursor-help text-[9px] leading-tight font-bold text-slate-500">
                             {req.nombreDocumento
-                              .split(" ")
-                              .map((w) => w[0])
-                              .join("")
-                              .slice(0, 4)
-                              .toUpperCase()}
+                              ?.split(" ")
+                              .pop()
+                              ?.toUpperCase()}
                           </span>
                         </TooltipTrigger>
                         <TooltipContent side="top" className="max-w-50 text-xs">
@@ -176,7 +174,7 @@ export default function TablaParticipantes({
                     inscripcion={ins}
                     requisitos={requisitos}
                     documentos={documentosMap[ins.id] ?? []}
-                    pagos={pagosMap[ins.id] ?? []} 
+                    pagos={pagosMap[ins.id] ?? []}
                     onVerFicha={setFichaAbierta}
                   />
                 ))}

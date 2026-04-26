@@ -7,6 +7,7 @@ export async function obtenerTodasLasSesiones(): Promise<SesionStats[]> {
     SELECT *
     FROM vista_sesion_stats
     ORDER BY
+      creado_en DESC,
       activo DESC,
       gestion DESC,
       nombre ASC

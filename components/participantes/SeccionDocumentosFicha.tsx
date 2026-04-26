@@ -33,7 +33,6 @@ const CONFIG: Record<
   },
   pendiente: {
     icon: Clock,
-    // Faltantes se resaltan con borde rojo y fondo suave
     fila: "border-rose-200 bg-rose-50/60 ring-1 ring-rose-100",
     badge: "bg-rose-100 text-rose-700",
     label: "Pendiente",
@@ -136,6 +135,7 @@ export default function SeccionDocumentosFicha({
 
           const fechaStr = doc?.fechaEntrega
             ? new Date(doc.fechaEntrega).toLocaleString("es-BO", {
+                weekday: 'long',
                 day: "2-digit",
                 month: "short",
                 year: "numeric",

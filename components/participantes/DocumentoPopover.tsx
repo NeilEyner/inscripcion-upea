@@ -112,7 +112,7 @@ export default function DocumentoPopover({
         En cambio, clona DocumentoBadge (un <div role="button"> con forwardRef)
         y le inyecta ref + onClick para anclar y abrir el popover.
       */}
-      <PopoverTrigger >
+      <PopoverTrigger>
         <DocumentoBadge
           estado={estadoActual}
           inscripcionId={inscripcionId}
@@ -136,6 +136,21 @@ export default function DocumentoPopover({
           <p className="mt-0.5 line-clamp-2 text-xs font-medium text-slate-700">
             {nombreDocumento}
           </p>
+          {fechaEntrega && (
+            <p className="mt-1 text-[10px] text-slate-500">
+              Entregado:{" "}
+              <span className="font-medium text-slate-600">
+                {new Date(fechaEntrega).toLocaleString('es-ES', {
+                  weekday: 'long',
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+              </span>
+            </p>
+          )}
         </div>
 
         <Separator />

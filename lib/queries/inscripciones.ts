@@ -31,7 +31,6 @@ export async function obtenerInscripcionesDeSesion(
     SELECT *
     FROM vista_inscripcion_detalle
     WHERE sesion_id = ${sesionId}
-      AND estado_inscripcion != 'cancelado'
     ORDER BY fecha_inscripcion DESC
   `;
   return rows as unknown as InscripcionDetalle[];
