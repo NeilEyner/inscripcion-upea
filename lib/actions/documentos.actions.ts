@@ -13,6 +13,10 @@ export type ActualizarDocumentoInput = {
 export type ActualizarDocumentoResult =
   | { success: true; mensaje: string }
   | { success: false; error: string };
+export type ActionResult = 
+  | { ok: true; data?: any } 
+  | { ok: false; error: string };
+
 /**
  * Actualiza el estado de un documento de control.
  * Si el estado es 'entregado', registra la fecha actual automáticamente.

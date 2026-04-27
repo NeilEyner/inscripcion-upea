@@ -30,6 +30,7 @@ type Props = {
   documentosMap: Record<string, ControlDocumento[]>;
   /** Mapa inscripcionId → pagos[] para la ficha del participante */
   pagosMap: Record<string, Pago[]>;
+  busqueda?: string;
 };
 
 type Orden = "nombre" | "estado" | "progreso";
@@ -40,6 +41,7 @@ export default function TablaParticipantes({
   requisitos,
   documentosMap,
   pagosMap,
+  busqueda
 }: Props) {
   const [orden, setOrden] = useState<Orden>("nombre");
   const [fichaAbierta, setFichaAbierta] = useState<InscripcionDetalle | null>(
